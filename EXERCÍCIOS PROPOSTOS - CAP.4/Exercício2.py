@@ -1,18 +1,12 @@
 import numpy as np
 
-arr = np.loadtxt('space.csv', delimiter=';', dtype='str', encoding='utf-8', skiprows=1)
+#Array de 0 até 50 de pares
+arr1 = np.arange(0,51,2)
 
-#Array de gastos
-gastos = arr[:, -2].astype(float)
+#Array de 100 até 50 de pares
+arr2 = np.arange(100,50,-2)
 
-#Gasto total
-gastoTotal = gastos[gastos > 0].sum()
-
-#Quantidade de missões com gastos maiores que 0
-availableMissions = gastos[gastos > 0].size
-
-#Média de gastos
-average = gastoTotal / availableMissions
-print(round(average,2), ' milhões de dólares\n')
-
-
+#Concatenando e ordenando os arrays
+arr3 = np.concatenate([arr1, arr2])
+arr3.sort()
+print(arr3)

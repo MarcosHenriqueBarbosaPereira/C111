@@ -1,9 +1,15 @@
 import numpy as np
 
-arr = np.loadtxt('space.csv', delimiter=';', dtype='str', encoding='utf-8', skiprows=1)
+#Array de 0 até 50 de pares
+arr1 = np.arange(0,51,2)
 
-#Quantidade de Missões executadas nos EUA
-localMissoes = arr[:,2]
-USAMissions = np.char.count(localMissoes, 'USA').sum()
-print(USAMissions, ' missões executadas nos EUA\n')
+#Array de 100 até 50 de pares
+arr2 = np.arange(100,50,-2)
 
+#Concatenando e ordenando os arrays
+arr3 = np.concatenate([arr1, arr2])
+arr3.sort()
+
+#Invertendo o array ordenado
+arrDecreasing = np.flip(arr3)
+print(arrDecreasing)

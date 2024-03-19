@@ -1,10 +1,13 @@
 import numpy as np
 
-arr = np.loadtxt('space.csv', delimiter=';', dtype='str', encoding='utf-8', skiprows=1)
+#Matriz
+mtz = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12], [13, 14, 15]])
 
-#Separando as missões de cada empresa (incide 1) e cada quantidade
-companies, counts = np.unique(arr[:,1], return_counts=True)
+l, c = mtz.shape
 
-print('Quantidade de missões por empresa:')
-for i in range(companies.size):
-    print(companies[i], ':', counts[i])
+totalElementos = l * c
+
+if totalElementos%2 == 0:
+    print('A matriz poderia se tornar um array com número par de elementos')
+else:
+    print('A matriz poderia se tornar um array com número ímpar de elementos')

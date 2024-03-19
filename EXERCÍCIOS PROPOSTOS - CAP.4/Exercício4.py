@@ -1,11 +1,7 @@
 import numpy as np
 
-arr = np.loadtxt('space.csv', delimiter=';', dtype='str', encoding='utf-8', skiprows=1)
+mtzOnes = np.ones(12).reshape(3, 4)
 
-#Buscando as missões da SpaceX (Indice 1)
-spacex = arr[arr[:,1] == 'SpaceX']
-
-#Buscando a missão mais cara
-mostExpensive = spacex[spacex[:,-2].astype(float).argmax()]
-
-print(mostExpensive, '\n')
+#transformando a matriz em um array de 1 dimensão utilizando reshape
+arrOnes = mtzOnes.reshape(12)
+print(arrOnes)
